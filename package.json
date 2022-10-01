@@ -9,6 +9,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
+    "test-headless": "ng test --watch=false --browsers=ChromeHeadless",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "build:prod": "ng build --configuration production",
