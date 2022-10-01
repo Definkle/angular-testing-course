@@ -20,6 +20,6 @@ jobs:
     - name: Install dependencies
       run: pnpm install
     - name: Run build if present
-      run: pnpm run build --if-present
+      run: pnpm run --if-present build
     - name: Run tests headless
       run: pnpm run test-headless
