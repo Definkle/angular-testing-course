@@ -10,9 +10,6 @@ name: Lint Code Base
 # Start the job on all push #
 #############################
 on:
-  push:
-    branches-ignore: [master]
-    # Remove the line above to run when pushing to master
   pull_request:
     branches: [master, main]
 
@@ -49,3 +46,4 @@ jobs:
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FILTER_REGEX_INCLUDE: .*src/.*
