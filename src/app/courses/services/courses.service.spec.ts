@@ -34,7 +34,7 @@ describe('CoursesService', () => {
     const request = httpTestingController.expectOne('/api/courses');
     expect(request.request.method).toEqual('GET');
 
-    request.flush({payload: Object.values(COURSES)});
+    request.flush({ payload: Object.values(COURSES) });
   });
 
   it('should find a course by id', () => {
@@ -50,7 +50,7 @@ describe('CoursesService', () => {
   });
 
   it('should save the course data', () => {
-    const changes: Partial<Course> = {titles: {description: 'Testing Course'}};
+    const changes: Partial<Course> = { titles: { description: 'Testing Course' } };
     coursesService.saveCourse(12, changes).subscribe((course) => {
       expect(course.id).toBe(12, 'incorrect course updated');
       expect(course.titles.description).toBe('Testing Course', 'incorrect field updated');
@@ -67,7 +67,7 @@ describe('CoursesService', () => {
   });
 
   it('should give an error if save course fails', () => {
-    const changes: Partial<Course> = {titles: {description: 'Testing Course'}};
+    const changes: Partial<Course> = { titles: { description: 'Testing Course' } };
     coursesService.saveCourse(12, changes).subscribe(
       () => fail('the save course should have failed'),
       (error: HttpErrorResponse) => {
@@ -76,7 +76,7 @@ describe('CoursesService', () => {
     );
     const request = httpTestingController.expectOne('/api/courses/12');
     expect(request.request.method).toEqual('PUT');
-    request.flush('Save course failed', {status: 500, statusText: 'Internal Server Error'})
+    request.flush('Save course failed', { status: 500, statusText: 'Internal Server Error' })
   });
 
   it('should find a list of lessons', () => {
