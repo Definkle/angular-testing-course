@@ -88,6 +88,15 @@
               "src/favicon.ico"
             ]
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     },
@@ -115,6 +124,10 @@
     }
   },
   "cli": {
-    "analytics": "6dd2fc52-134c-41a4-bd54-89b160f1c524"
+    "analytics": "6dd2fc52-134c-41a4-bd54-89b160f1c524",
+    "packageManager": "pnpm",
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }
